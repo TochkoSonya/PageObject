@@ -42,20 +42,20 @@ public class PageObjectTest {
         Assert.assertTrue(expectedSearchResult>0);
     }
 
-    @Test
-    public void AddItemToBasketTest() {
-
-        int expectedSearchResult=new HomePage(driver)
-                .openPage()
-                .searchForTerms("52 0")
-                .selectItem()
-                .chooseSize()
-                .addToBasket()
-                .goToBasket()
-                .getCountResultsInBasket();
-
-        Assert.assertTrue(expectedSearchResult>0);
-    }
+//    @Test
+//    public void AddItemToBasketTest() {
+//
+//        int expectedSearchResult=new HomePage(driver)
+//                .openPage()
+//                .searchForTerms("52 0")
+//                .selectItem()
+//                .chooseSize()
+//                .addToBasket()
+//                .goToBasket()
+//                .getCountResultsInBasket();
+//
+//        Assert.assertTrue(expectedSearchResult>0);
+//    }
 
     @AfterMethod(alwaysRun = true)
     public void driverTearDown() {
