@@ -9,15 +9,14 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class BasketPage {
+public class BasketPage extends AbstractPage {
 
-    private WebDriver driver;
 
     @FindBy(css="div[class='item wishlist'] div")
     List<WebElement> favoriteItemsList;
 
     public BasketPage(WebDriver driver){
-        this.driver=driver;
+        super(driver);
         PageFactory.initElements(driver,this);
     }
 

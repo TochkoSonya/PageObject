@@ -8,9 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class HomePage {
-    private static final String HOMEPAGE_URL="https://lakbishop.by/";
-    private WebDriver driver;
+public class HomePage extends AbstractPage {
 
     @FindBy(className ="search")
     private WebElement searchButton;
@@ -19,13 +17,13 @@ public class HomePage {
     private WebElement searchField;
 
     public HomePage(WebDriver driver){
-        this.driver=driver;
+        super(driver);
         PageFactory.initElements(driver,this);
     }
 
     public HomePage openPage(){
         driver.get(HOMEPAGE_URL);
-        new WebDriverWait(driver,15)
+        new WebDriverWait(driver,5)
                 .until(ExpectedConditions.elementToBeClickable(searchButton));
         return this;
     }

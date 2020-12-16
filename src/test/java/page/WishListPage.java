@@ -7,19 +7,17 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class CatalogPage extends AbstractPage {
+public class WishListPage extends AbstractPage{
 
+    @FindBy(css="div[class='item wishlist'] div")
+    private List<WebElement> itemsInWishList;
 
-    @FindBy(tagName = "img")
-    List<WebElement> imageLinks;
-
-    public CatalogPage(WebDriver driver){
+    public WishListPage(WebDriver driver){
         super(driver);
         PageFactory.initElements(driver,this);
     }
 
-    public ProductPage selectItem(){
-        imageLinks.get(3).click();
-        return new ProductPage(driver);
+    public int getNumberItemsInWishList(){
+        return itemsInWishList.size();
     }
 }

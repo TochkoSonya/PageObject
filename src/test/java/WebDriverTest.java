@@ -21,6 +21,7 @@ public class WebDriverTest {
 
     @BeforeMethod(alwaysRun = true)
     public void driverSetup() {
+        System.setProperty("webdriver.chrome.driver","D:\\WebDrivers\\chromedriver.exe");
         driver = new ChromeDriver();
         actionProvider = new Actions(driver);
     }

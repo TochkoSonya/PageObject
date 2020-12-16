@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import page.HomePage;
+import page.ProductPage;
 
 
 public class PageObjectTest {
@@ -18,6 +19,7 @@ public class PageObjectTest {
 
     @BeforeTest
     public void init() {
+
         System.setProperty("webdriver.chrome.driver","D:\\WebDrivers\\chromedriver.exe");
     }
 
@@ -42,20 +44,23 @@ public class PageObjectTest {
         Assert.assertTrue(expectedSearchResult>0);
     }
 
-//    @Test
-//    public void AddItemToBasketTest() {
-//
-//        int expectedSearchResult=new HomePage(driver)
-//                .openPage()
-//                .searchForTerms("52 0")
-//                .selectItem()
-//                .chooseSize()
-//                .addToBasket()
-//                .goToBasket()
-//                .getCountResultsInBasket();
-//
-//        Assert.assertTrue(expectedSearchResult>0);
-//    }
+    @Test
+    public void AddTheSameItemsToWishList() {
+
+        int expectedSearchResult=new ProductPage(driver)
+                .openPage()
+                .chooseSize()
+                .addToWishList()
+                .stayOnProductPage()
+                .addToWishList()
+                .goToWishList()
+                .getNumberItemsInWishList();
+
+        Assert.assertEquals(expectedSearchResult,1);
+
+    }
+
+
 
     @AfterMethod(alwaysRun = true)
     public void driverTearDown() {
