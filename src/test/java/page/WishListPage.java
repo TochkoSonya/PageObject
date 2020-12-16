@@ -9,7 +9,7 @@ import java.util.List;
 
 public class WishListPage extends AbstractPage{
 
-    @FindBy(css="div[class='item wishlist'] div")
+    @FindBy(css="div[class='item clearfix']")
     private List<WebElement> itemsInWishList;
 
     public WishListPage(WebDriver driver){
