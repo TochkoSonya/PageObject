@@ -25,7 +25,7 @@ public class HomePage {
 
     public HomePage openPage(){
         driver.get(HOMEPAGE_URL);
-        new WebDriverWait(driver,5)
+        new WebDriverWait(driver,15)
                 .until(ExpectedConditions.elementToBeClickable(searchButton));
         return this;
     }
