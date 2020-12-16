@@ -46,6 +46,8 @@ public class ProductPage extends AbstractPage {
     }
 
     public ProductPage chooseSize(){
+        new WebDriverWait(driver,5)
+                .until(ExpectedConditions.elementToBeClickable(sizeListButton));
         sizeListButton.click();
        new WebDriverWait(driver,5)
                 .until(ExpectedConditions.elementToBeClickable(listOfElements.get(1)));
@@ -66,15 +68,15 @@ public class ProductPage extends AbstractPage {
     }
 
     public ProductPage addToWishList(){
-//        new WebDriverWait(driver,5)
-//                .until(ExpectedConditions.elementToBeClickable(addToWishListButton));
+        new WebDriverWait(driver,5)
+                .until(ExpectedConditions.visibilityOf(addToWishListButton));
         addToWishListButton.click();
         return this;
     }
 
     public ProductPage stayOnProductPage(){
-//       new WebDriverWait(driver,10)
-//               .until(ExpectedConditions.visibilityOf(stayOnProductPageButton.get(0)));
+       new WebDriverWait(driver,5)
+               .until(ExpectedConditions.visibilityOf(stayOnProductPageButton));
         stayOnProductPageButton.click();
         return this;
     }

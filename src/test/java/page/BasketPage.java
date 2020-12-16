@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class BasketPage extends AbstractPage {
 
 
-    @FindBy(css="div[class='item wishlist'] div")
+    @FindBy(css="div[class='item clearfix']")
     List<WebElement> favoriteItemsList;
 
     public BasketPage(WebDriver driver){

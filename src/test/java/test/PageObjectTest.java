@@ -41,7 +41,7 @@ public class PageObjectTest {
                 .goToBasket()
                 .getCountResultsInBasket();
 
-        Assert.assertTrue(expectedSearchResult>0);
+        Assert.assertEquals(expectedSearchResult,1);
     }
 
     @Test
